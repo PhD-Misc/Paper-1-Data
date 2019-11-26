@@ -42,7 +42,7 @@ cmap.set_bad(color='black')
 #plt.subplots_adjust(hspace=0)
 
 
-plt.imshow(waterfall, cmap=cmap, interpolation='nearest', aspect='auto', vmax=5, extent=[72.335, 103.015, 0, 49])
+plt.imshow(np.exp(waterfall), cmap=cmap, interpolation='nearest', aspect='auto',  extent=[72.335, 103.015, 0, 49])
 #plt.colorbar()
 
 #The below are perth transmitters

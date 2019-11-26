@@ -17,7 +17,7 @@ hfont = {'fontname':'Helvetica', 'size':15}
 
 
 for i in range(40):
-	for file in glob.glob("waterfall-sum-" +str(i) + ".txt"):
+	for file in glob.glob("UKUBE_waterfall-sum-" +str(i) + ".txt"):
 		lines = loadtxt(file, delimiter=' ', unpack=False)
 		length = lines.shape
 
@@ -34,11 +34,11 @@ for z in r:
 
 
 waterfall = np.ma.masked_where(waterfall==0, waterfall)
-cmap = plt.cm.inferno
+cmap = plt.cm.cubehelix
 cmap.set_bad(color='black')
 
 
-plt.imshow(waterfall, cmap=cmap, interpolation='nearest', aspect='auto', extent=[72.335, 103.015, 39, 0], vmax=6)
+plt.imshow(np.log(waterfall), cmap=cmap, interpolation='nearest', aspect='auto',vmin=-20)
 #plt.colorbar()
 #plt.vlines(92.1, colors='orange', ymin=0, ymax=89,linestyles=':')
 #plt.vlines(92.9, colors='orange', ymin=0, ymax=89,linestyles=':')

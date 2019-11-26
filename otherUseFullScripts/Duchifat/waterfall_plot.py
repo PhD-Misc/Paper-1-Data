@@ -12,12 +12,12 @@ import os.path
 
 
 waterfall = np.zeros((78,768))
-hfont = {'fontname':'Helvetica', 'size':15}
+hfont = {'fontname':'Helvetica', 'size':20}
 
 
 
 for i in range(78):
-	for file in glob.glob("waterfall-sum-" +str(i) + ".txt"):
+	for file in glob.glob("UKUBE_waterfall-sum-" +str(i) + ".txt"):
 		lines = loadtxt(file, delimiter=' ', unpack=False)
 		length = lines.shape
 
@@ -34,7 +34,7 @@ for z in r:
 
 
 waterfall = np.ma.masked_where(waterfall==0, waterfall)
-cmap = plt.cm.inferno
+cmap = plt.cm.cubehelix
 cmap.set_bad(color='black')
 
 plt.imshow(waterfall, cmap=cmap, interpolation='nearest',  aspect='auto', extent=[72.34, 102.97, 77, 1])

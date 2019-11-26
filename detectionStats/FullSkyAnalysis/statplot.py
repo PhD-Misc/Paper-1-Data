@@ -27,12 +27,12 @@ for i in range(len(rcs4)):
 for i in range(len(rcs5)):
     plt.plot(rcs5[i],los5[i]/1000.0, marker='x',color='black')
 hfont = {'fontname':'Helvetica', 'size':15}
-plt.vlines(1,0,10000)
+plt.vlines(0.79,0,10000)
 plt.hlines(1000,0,1000)
 temp = np.linspace(0,100, 1000)
 plt.fill_between(temp, 0, 1000, facecolor='blue', alpha=0.3, label='Range < 1000 Km')
-temp2 = np.linspace(1,100,1000)
-plt.fill_between(temp2,10000,0, facecolors='red', alpha=0.3,label='RCS > 1.0 $(m^{2})$')
+temp2 = np.linspace(0.79,100,1000)
+plt.fill_between(temp2,10000,0, facecolors='red', alpha=0.3,label='RCS > 0.79 $(m^{2})$')
 
 
 
@@ -58,5 +58,5 @@ sat2 = plt.plot(DUCHIFAT_RCS,DUCHIFAT_range, marker='<',color='yellow',markeredg
 sat3 = plt.plot(ALOS_RCS,ALOS_range, marker='o',color='lime',markeredgecolor='black',markersize=10,label = 'ALOS')
 sat4 = plt.plot(ALOUETTE_RCS,ALOUETTE_range, marker='s',color='lime',markeredgecolor='black',markersize=10, label='Alouette-2')
 #plt.plot(ISS_RCS,ISS_range, marker='o',color='lime',markeredgecolor='black',markersize=10)
-plt.legend()
+plt.legend(loc=2)
 plt.show()

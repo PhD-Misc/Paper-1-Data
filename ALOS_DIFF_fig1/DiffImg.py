@@ -16,7 +16,7 @@ for i in range(50):
     dataDiff = hdu2[0].data[0,0,:,:] - hdu1[0].data[0,0,:,:]
     print(i) 
     plt.figure().add_subplot(1,1,1, projection = wcs)
-    plt.imshow(dataDiff, cmap=plt.cm.cubehelix, origin='lower', vmin=-10, vmax=30)
+    plt.imshow(dataDiff, cmap=plt.cm.inferno, origin='lower', vmin=-10, vmax=30)
     plt.xlabel('RA (Degrees)', **hfont)
     plt.ylabel('DEC (Degrees)', **hfont)
     plt.colorbar().set_label("Jy/Beam", labelpad=+1, **hfont)
